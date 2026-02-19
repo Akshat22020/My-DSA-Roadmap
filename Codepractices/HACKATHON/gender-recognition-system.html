@@ -1,0 +1,144 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Analytics</title>
+    <style>
+        /* Add some basic styling to our page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #video-container {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Women Safety Analytics</h2>
+        <form>
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <button id="detect-btn">Detect Gender</button>
+        </form>
+        <div id="result"></div>
+        <div id="video-container">
+            <video id="video" width="100%" height="100%"></video>
+        </div>
+        <button id="start-btn">Start Video Analysis</button>
+        <button id="stop-btn">Stop Video Analysis</button>
+        <div id="analysis-result"></div>
+    </div>
+
+    <script>
+        // Import the required libraries
+        const tf = await import('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.7.0/dist/tf.min.js');
+        const cv = await import('https://cdn.jsdelivr.net/npm/opencv.js@1.0.0/dist/opencv.min.js');
+        const genderModel = await import('https://cdn.jsdelivr.net/npm/gender-detection@1.0.0/dist/gender-detection.min.js');
+
+        // Get the input field and button
+        const nameInput = document.getElementById('name');
+        const detectBtn = document.getElementById('detect-btn');
+        const resultDiv = document.getElementById('result');
+        const videoContainer = document.getElementById('video-container');
+        const video = document.getElementById('video');
+        const startBtn = document.getElementById('start-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const analysisResultDiv = document.getElementById('analysis-result');
+
+        // Add event listener to the button
+        detectBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = nameInput.value.trim();
+            if (name !== '') {
+                // Use the Gender Detection AI model to detect the gender
+                genderModel.detectGender(name).then((gender) => {
+                    resultDiv.innerText = `Your gender is: ${gender}`;
+                }).catch((error) => {
+                    console.error(error);
+                    resultDiv.innerText = 'Error detecting gender';
+                });
+            } else {
+                resultDiv.innerText = 'Please enter your name';
+            }
+        });
+
+        // Add event listener to the start button
+        startBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Start video analysis
+            startVideoAnalysis();
+        });
+
+        // Add event listener to the stop button
+        stopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Stop video analysis
+            stopVideoAnalysis();
+        });
+
+        // Function to start video analysis
+        async function startVideoAnalysis() {
+            // Get the video stream
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+
+            // Create a new video analysis interval
+            setInterval(async () => {
+                // Get the current video frame
+                const frame = await getVideoFrame();
+                // Convert
+                        // Function to preprocess the tensor
+        function preprocessTensor(tensor) {
+            // Normalize the tensor values to be between 0 and 1
+            const normalizedTensor = tf.div(tensor, 255);
+            // Return the preprocessed tensor
+            return normalizedTensor;
+        }
+    </script>
+</body>
+</html>

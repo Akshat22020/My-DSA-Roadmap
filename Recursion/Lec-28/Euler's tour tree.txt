@@ -1,0 +1,9 @@
+**Ek time pe ek hi portion of recursion chalega , say , if  answer is --> fibo(n-1)+fibo(n-2)
+toh pehle fibo (n-1) --> fibo(n-2)+fibo(n-3) me tootega 
+fir pehle fibo(n-2) run hoga , regardless of the second part .
+
+
+Left -> left -> left 
+                     |
+                    |
+right<-right<-right<--

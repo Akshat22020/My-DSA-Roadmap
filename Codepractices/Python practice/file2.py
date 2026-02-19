@@ -1,0 +1,7 @@
+f=open("My_File2.txt","w+")
+f.write("jai shree ram")
+f.close()
+f=open("My_File2.txt","a+")
+f.write("Jai shree ram")
+f.seek(3)
+f.write("Hello")

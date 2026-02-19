@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>jQuery Class Selector</title>
+
+</head>
+
+<body>
+
+<h1>jQuery Class Selector</h1>
+
+<div class="p1">
+
+<p class="p1">This is 1st text</p>
+
+<p class="p1">This is 2nd text</p>
+
+</div>
+
+<button id="demo">Click Me</button>
+
+<script src="https://ajax.googleapis.com /ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+
+<script>
+
+$(document).ready(function () {
+     $('#demo').click(function () {
+
+
+
+$('div.p1').css('border','2px solid red');
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>

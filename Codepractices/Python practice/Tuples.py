@@ -1,0 +1,5 @@
+tuple=(1,2,3,"Akshat",4,5,"Harsh","Riya")
+print(tuple)
+print(type(tuple))
+print(len(tuple))
+print(tuple[3])

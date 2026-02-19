@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emergency Reporting System</title>
+  <style>
+    /* Add some basic styling to make the page look decent */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .emergency-options {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .option {
+      margin-bottom: 20px;
+    }
+    .option label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .option input[type="radio"] {
+      margin-right: 10px;
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="https://img.freepik.com/premium-vector/emergency-word-concept-with-red-siren-illustration_624938-731.jpg" alt="Emergency Logo">
+  </div>
+  <h1>Emergency Reporting System</h1>
+  <div class="emergency-options">
+    <h2>Report an Emergency</h2>
+    <form>
+      <div class="option">
+        <label><input type="radio" name="emergency-type" value="police"> Report to Nearest Police Station</label>
+        <input type="text" id="police-station" placeholder="Enter Police Station Name">
+        <button type="button" onclick="reportToPolice()">Report</button>
+      </div>
+      <div class="option">
+        <label><input type="radio" name="emergency-type" value="emergency-contact"> Report to Emergency Contact</label>
+        <input type="text" id="emergency-contact" placeholder="Enter Emergency Contact Name">
+        <button type="button" onclick="reportToContact()">Report</button>
+      </div>
+      <div class="option">
+        <label><input type="radio" name="emergency-type" value="other"> Other (please specify)</label>
+        <textarea id="other-emergency" placeholder="Enter details of the emergency"></textarea>
+        <button type="button" onclick="reportOther()">Report</button>
+      </div>
+      <div class="option">
+        <label><input type="radio" name="emergency-type" value="siren"> Ring Sirens of Nearest Public Traffic Pole</label>
+        <button type="button" onclick="ringSirens()">Ring Sirens</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Add JavaScript functionality to handle form submissions
+    function reportToPolice() {
+      // TO DO: implement logic to report to nearest police station
+      alert("Reporting to nearest police station...");
+    }
+    function reportToContact() {
+      // TO DO: implement logic to report to emergency contact
+      alert("Reporting to emergency contact...");
+    }
+    function reportOther() {
+      // TO DO: implement logic to handle other emergency reports
+      alert("Reporting other emergency...");
+    }
+    function ringSirens() {
+      // TO DO: implement logic to ring sirens of nearest public traffic pole
+      // This will likely involve making an API call to a service that controls the sirens
+      // For demonstration purposes, we'll just display an alert
+      alert("Ringing sirens of nearest public traffic pole...");
+    }
+  </script>
+</body>
+</html>

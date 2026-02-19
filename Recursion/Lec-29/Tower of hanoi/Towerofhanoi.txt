@@ -1,0 +1,2 @@
+The minimum number of moves is --> (2^n)-1 , where n= number of disks
+

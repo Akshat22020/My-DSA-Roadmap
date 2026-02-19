@@ -1,0 +1,9 @@
+kaam ----> Pre
+
+call 1 
+
+kaam ---->In
+
+call 2 
+
+kaam ----> Post
