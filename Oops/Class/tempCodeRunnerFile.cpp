@@ -1,0 +1,1 @@
+    // (*player3)->setScore(40);
