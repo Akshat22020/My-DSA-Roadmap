@@ -15,6 +15,15 @@ void display(Node*head){
     cout<<temp->val<< "->";
     display(temp->next);
 }
+
+void revdisplay(Node*head){
+    Node*temp=head; //new variable of type Node
+    if(temp==NULL) return ;
+    revdisplay(temp->next);
+    cout<<temp->val<< "->";
+    
+}
+
 int main(){
     Node*a = new Node(10);
     Node*b = new Node(20);
@@ -26,4 +35,6 @@ int main(){
     c->next=d;
     d->next=e;
     display(a);
+    cout<<endl;
+    revdisplay(a);
 }
