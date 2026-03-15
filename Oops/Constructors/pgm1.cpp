@@ -4,13 +4,11 @@ class Bike{
     public:
     int tyreSize;
     int engine;
-    Bike(int tyreSize , int engine){
-        this->tyreSize=tyreSize;
-        this->engine=engine;
-        
+    Bike(int ts , int eg=500):tyreSize(ts) , engine(eg){
+      
     }
 
-};
+}; 
 int main(){
     //destructor yaha call hoga 
     Bike tvs(12,200); //object creation //constructor call ho jaawe
