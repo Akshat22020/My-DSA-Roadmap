@@ -11,6 +11,11 @@ class Node{
         this->next=NULL;
         this->prev=NULL;
     }
+
+    //insertion//
+    Node*insert(Node*head , Node*tail , int index){
+        
+    }
 };
 int main(){
     Node*A=new Node(10);
