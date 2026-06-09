@@ -29,7 +29,7 @@ Node*constructtree(int arr[],int n){
         if(arr[i]!=INT_MIN) l=new Node(arr[i]);
         else l=NULL;
 
-        if(j!=n && arr[i]!=INT_MIN) r =new Node(arr[i]);
+        if(j!=n && arr[j]!=INT_MIN) r =new Node(arr[j]);
         else r=NULL;
 
         temp->left=l;
@@ -53,7 +53,7 @@ void levelorderQueue(Node*root){
         q.pop();
         cout<<temp->val<<" ";
         if(temp->left!=NULL) q.push(temp->left);
-        if(temp->left!=NULL) q.push(temp->right);
+        if(temp->right!=NULL) q.push(temp->right);
 
     }
     cout<<endl;
@@ -61,7 +61,7 @@ void levelorderQueue(Node*root){
 }
 
 int main(){
-    int arr[]={1,2,3,4,5,6,INT_MIN,6,INT_MIN,INT_MIN,7,8,9};
+    int arr[]={1,2,3,4,5,INT_MIN,6,INT_MIN ,7,INT_MIN,8,INT_MIN,9,10,11,INT_MIN,12 , INT_MIN , 13 , INT_MIN , 14 , 15 ,16 , INT_MIN ,17 , 18, INT_MIN , 19, INT_MIN , INT_MIN , INT_MIN , 20 , 21 , 22 ,23 , INT_MIN , 24 , 25 , 26 ,27 ,INT_MIN , INT_MIN , 28 ,INT_MIN , INT_MIN};
     
     int n=sizeof(arr)/sizeof(arr[0]); 
     Node*root=constructtree(arr,n);
